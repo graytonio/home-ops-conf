@@ -1,0 +1,17 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: heimdall
+  namespace: heimdall
+spec:
+  chart:
+    spec:
+      version: "8.4.2"
+  values:
+    ingress:
+      main:
+        hosts:
+          - host: heimdall.staging
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
