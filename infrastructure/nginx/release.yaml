@@ -22,5 +22,5 @@ spec:
     service:
       type: NodePort
       nodePorts:
-        http: "80"
-        https: "443"
+        http: 80
+        https: 443
