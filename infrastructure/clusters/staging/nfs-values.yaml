@@ -1,0 +1,9 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nfs-subdir-provisioner
+spec:
+  values:
+    nfs:
+      server: 10.0.0.50
+      path: /mnt/Vault/kubernetes-staging

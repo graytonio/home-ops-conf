@@ -6,3 +6,4 @@ resources:
   - podinfo.yaml
   - k8s-at-home.yaml
   - metallb.yaml
+  - nfs-subdir-provisioner
