@@ -21,3 +21,5 @@ spec:
   values:
     service:
       type: LoadBalancer
+      labels:
+        type: Ingress
