@@ -16,3 +16,7 @@ spec:
   install:
     remediation:
       retries: 3
+  values:
+    nfs:
+      server: 10.0.0.50
+      path: /mnt/Vault/kubernetes-staging
