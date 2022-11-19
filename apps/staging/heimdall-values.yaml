@@ -11,7 +11,7 @@ spec:
     env:
       TZ: America/New_York
       PUID: "1003"
-      GUID: "1002"
+      PGID: "1002"
     ingress:
       main:
         hosts:
