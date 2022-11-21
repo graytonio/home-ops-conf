@@ -15,7 +15,7 @@ spec:
     ingress:
       main:
         hosts:
-          - host: heimdall.staging
+          - host: portal.staging.graytonward.com
             paths:
               - path: /
                 pathType: ImplementationSpecific
