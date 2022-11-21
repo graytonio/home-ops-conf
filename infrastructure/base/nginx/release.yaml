@@ -23,6 +23,3 @@ spec:
       type: LoadBalancer
       labels:
         type: Ingress
-      nodePorts:
-        http: 30080
-        https: 30443
