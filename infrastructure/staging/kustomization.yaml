@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ../base/sources
   - ../base/metallb
-  - ../base/nginx
   - ../base/nfs-subdir-provisioner
 patchesStrategicMerge:
   - nfs-values.yaml
