@@ -4,3 +4,4 @@ namespace: metallb
 resources:
   - namespace.yaml
   - release.yaml
+  - l2advertisement.yaml
