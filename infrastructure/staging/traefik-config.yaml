@@ -1,0 +1,14 @@
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  valuesContent: |-
+    additionalArguments:
+      - --entrypoints.websecure.http.tls.domains[0].main=staging.graytonward.com
+      - --entrypoints.websecure.http.tls.domains[0].sans=*.staging.graytonward.com
+
+
+    
+    
