@@ -7,7 +7,7 @@ spec:
   valuesContent: |-
     ingressRoute:
       dashboard:
-        entryPoints: ["traefik", "websecure"]
+        entryPoints: ["websecure"]
     ports:
       web:
         redirectTo: websecure
