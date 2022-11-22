@@ -18,10 +18,10 @@ spec:
       retries: 3
   values:
     ingress:
-      annotations:
-        traefik.ingress.kubernetes.io/router.tls: "true"
       main:
         enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.tls: "true"
     persistence:
       config:
         enabled: true
