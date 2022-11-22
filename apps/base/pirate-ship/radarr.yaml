@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: radarr
+spec:
+  releaseName: radarr
+  chart:
+    spec:
+      chart: radarr
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    persistence:
+      config:
+        enabled: true
+        type: pvc
+        accessMode: ReadWriteMany
+        size: 1Gi
+    metrics:
+      enabled: true

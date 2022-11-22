@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
   - ../base/podinfo
   - ../base/heimdall
+  - ../base/pirate-ship
 patchesStrategicMerge:
   - podinfo-values.yaml
   - heimdall-values.yaml
+  - pirate-ship-values.yaml
