@@ -7,8 +7,7 @@ spec:
   valuesContent: |-
     ingressRoutes:
       dashboard:
-        enabled: true
-        matchRule: Host(`traefik.staging.graytonward.com`) && PathPrefix(`/dashboard`) || PathPrefix(`/api`)
+        enabled: false
     ports:
         web:
           redirectTo: websecure
@@ -35,4 +34,20 @@ spec:
           secretKeyRef:
             key: apiKey
             name: cloudflare-api-credentials
-    
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: kube-system
+
+spec:
+  entryPoints:
+    - websecure
+
+  routes:
+    - match: Host(`traefik.staging.graytonward..com`)
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
