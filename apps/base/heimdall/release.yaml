@@ -17,6 +17,8 @@ spec:
     remediation:
       retries: 3
   values:
+    image:
+      tag: 2.4.15
     ingress:
       main:
         enabled: true
