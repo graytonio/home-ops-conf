@@ -46,7 +46,7 @@ spec:
     - websecure
 
   routes:
-    - match: Host(`traefik.staging.graytonward..com`)
+    - match: Host(`traefik.staging.graytonward.com`)
       kind: Rule
       services:
         - name: api@internal
