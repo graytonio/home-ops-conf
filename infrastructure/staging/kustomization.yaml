@@ -4,5 +4,6 @@ resources:
   - ../base/sources
   - ../base/metallb
   - ../base/nfs-subdir-provisioner
+  - ../base/traefik-config
 patchesStrategicMerge:
   - nfs-values.yaml
