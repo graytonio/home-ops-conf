@@ -16,6 +16,3 @@ spec:
       main:
         hosts:
           - host: portal.staging.graytonward.com
-            paths:
-              - path: /
-                pathType: ImplementationSpecific
