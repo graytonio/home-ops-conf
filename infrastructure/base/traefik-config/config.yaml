@@ -1,7 +1,7 @@
 apiVersion: helm.cattle.io/v1
 kind: HelmChartConfig
 metadata:
-  name: traefik
+  name: base-traefik
 spec:
   valuesContent: |-
     additionalArguments:
