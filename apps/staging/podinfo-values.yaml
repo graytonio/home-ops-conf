@@ -13,3 +13,6 @@ spec:
     ingress:
       hosts:
         - host: podinfo.staging.graytonward.com
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
