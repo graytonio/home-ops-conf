@@ -4,6 +4,9 @@ metadata:
   name: base-traefik
 spec:
   valuesContent: |-
+    ports:
+        web:
+          redirectTo: websecure
     additionalArguments:
       - --entrypoints.websecure.http.tls.certresolver=cloudflare
       - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
@@ -14,9 +17,6 @@ spec:
       enabled: true
       path: /certs
       size: 128Mi
-    ports:
-      web:
-        redirectTo: websecure
     env:
       - name: CF_API_EMAIL
         valueFrom:
