@@ -20,8 +20,6 @@ spec:
     ingress:
       main:
         enabled: true
-        annotations:
-          traefik.ingress.kubernetes.io/router.tls: "true"
     persistence:
       config:
         enabled: true
