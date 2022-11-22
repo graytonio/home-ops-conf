@@ -4,12 +4,12 @@ metadata:
   name: traefik
 spec:
   valuesContent: |-
-    # additionalArguments:
-    #   - --entrypoints.websecure.http.tls.certresolver=cloudflare
-    #   - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
-    #   - --certificatesresolvers.cloudflare.acme.storage=/certs/acme.json
-    #   - --certificatesresolvers.cloudflare.acme.email=graytonio.ward@gmail.com
-    #   - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1
+    additionalArguments:
+      - --entrypoints.websecure.http.tls.certresolver=cloudflare
+      - --certificatesresolvers.cloudflare.acme.dnschallenge.provider=cloudflare
+      - --certificatesresolvers.cloudflare.acme.storage=/certs/acme.json
+      - --certificatesresolvers.cloudflare.acme.email=graytonio.ward@gmail.com
+      - --certificatesresolvers.cloudflare.acme.dnschallenge.resolvers=1.1.1.1
     persistence:
       enabled: true
       path: /certs
@@ -17,14 +17,14 @@ spec:
     ports:
       web:
         redirectTo: websecure
-    # env:
-    #   - name: CF_API_EMAIL
-    #     valueFrom:
-    #       secretKeyRef:
-    #         key: email
-    #         name: cloudflare-api-credentials
-    #   - name: CF_API_KEY
-    #     valueFrom:
-    #       secretKeyRef:
-    #         key: apiKey
-    #         name: cloudflare-api-credentials
+    env:
+      - name: CF_API_EMAIL
+        valueFrom:
+          secretKeyRef:
+            key: email
+            name: cloudflare-api-credentials
+      - name: CF_API_KEY
+        valueFrom:
+          secretKeyRef:
+            key: apiKey
+            name: cloudflare-api-credentials

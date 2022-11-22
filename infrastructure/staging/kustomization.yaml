@@ -6,5 +6,6 @@ resources:
   - ../base/nfs-subdir-provisioner
   - ../base/traefik-config
   - ../base/sealed-secrets
+  - traefik-config.yaml
 patchesStrategicMerge:
   - nfs-values.yaml
