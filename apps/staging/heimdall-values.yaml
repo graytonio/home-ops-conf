@@ -8,6 +8,8 @@ spec:
     spec:
       version: "8.4.2"
   values:
+    image:
+      tag: 2.4.15
     env:
       TZ: America/New_York
       PUID: "1003"
