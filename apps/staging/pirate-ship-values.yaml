@@ -15,7 +15,7 @@ spec:
       media:
         volumeSpec:
           nfs:
-            path: /mnt/Vault/Media/Movies
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/Movies
             server: 10.0.0.50
     ingress:
       main:
@@ -42,7 +42,7 @@ spec:
       media:
         volumeSpec:
           nfs:
-            path: /mnt/Vault/Media/TV
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/TV
             server: 10.0.0.50
     ingress:
       main:
@@ -90,7 +90,7 @@ spec:
       downloads:
         volumeSpec:
           nfs:
-            path: /mnt/Vault/Media/downloads
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/downloads
             server: 10.0.0.50
     ingress:
       main:
@@ -117,7 +117,7 @@ spec:
       downloads:
         volumeSpec:
           nfs:
-            path: /mnt/Vault/Media/downloads
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/downloads
             server: 10.0.0.50
     ingress:
       main:
