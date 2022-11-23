@@ -41,8 +41,9 @@ spec:
     persistence:
       media:
         volumeSpec:
-          path: /mnt/Vault/Media/TV
-          server: 10.0.0.50
+          nfs:
+            path: /mnt/Vault/Media/TV
+            server: 10.0.0.50
     ingress:
       main:
         hosts:
@@ -87,9 +88,10 @@ spec:
       PGID: "1002"
     persistence:
       downloads:
-        volumeSpec:
-          path: /mnt/Vault/Media/downloads
-          server: 10.0.0.50
+        nfs:
+          volumeSpec:
+            path: /mnt/Vault/Media/downloads
+            server: 10.0.0.50
     ingress:
       main:
         hosts:
@@ -113,9 +115,10 @@ spec:
       PGID: "1002"
     persistence:
       downloads:
-        volumeSpec:
-          path: /mnt/Vault/Media/downloads
-          server: 10.0.0.50
+        nfs:
+          volumeSpec:
+            path: /mnt/Vault/Media/downloads
+            server: 10.0.0.50
     ingress:
       main:
         hosts:
