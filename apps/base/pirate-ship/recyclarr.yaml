@@ -89,7 +89,7 @@ spec:
                 name: recyclarr-config
           containers:
             - name: recyclarr
-              image: ghcr.io/recyclarr/recyclarr:2.2
+              image: ghcr.io/recyclarr/recyclarr:2.6.1
               command: ["recyclarr"]
               args: ["radarr", "-p"]
               volumeMounts:
