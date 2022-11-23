@@ -60,3 +60,24 @@ spec:
             paths:
               - path: /
                 pathType: ImplementationSpecific
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: transmission
+  namespace: pirate-ship
+spec:
+  values:
+    image:
+      tag: 3.00-r6-ls143
+    env:
+      TZ: America/New_York
+      PUID: "1003"
+      PGID: "1002"
+    ingress:
+      main:
+        hosts:
+          - host: transmission.staging.graytonward.com
+            paths:
+              - path: /
+                pathType: ImplementationSpecific

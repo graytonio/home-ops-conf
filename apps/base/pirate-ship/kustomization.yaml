@@ -6,3 +6,4 @@ resources:
   - radarr.yaml
   - sonarr.yaml
   - jackett.yaml
+  - transmission.yaml
