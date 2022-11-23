@@ -4,12 +4,8 @@ metadata:
   name: radarr
   namespace: pirate-ship
 spec:
-  chart:
-    spec:
-      version: "16.3.2"
   values:
     image:
-      repository: ghcr.io/linuxserver/radarr
       tag: 4.2.4
     env:
       TZ: America/New_York
@@ -29,12 +25,8 @@ metadata:
   name: sonarr
   namespace: pirate-ship
 spec:
-  chart:
-    spec:
-      version: "16.3.2"
   values:
     image:
-      repository: ghcr.io/linuxserver/sonarr
       tag: 3.0.9
     env:
       TZ: America/New_York
@@ -44,6 +36,27 @@ spec:
       main:
         hosts:
           - host: sonarr.staging.graytonward.com
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: jackett
+  namespace: pirate-ship
+spec:
+  values:
+    image:
+      tag: 0.20.2273
+    env:
+      TZ: America/New_York
+      PUID: "1003"
+      PGID: "1002"
+    ingress:
+      main:
+        hosts:
+          - host: jackett.staging.graytonward.com
             paths:
               - path: /
                 pathType: ImplementationSpecific
