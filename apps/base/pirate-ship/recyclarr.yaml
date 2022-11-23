@@ -1,0 +1,94 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: recyclarr-config
+  labels:
+    app.kubernetes.io/name: recyclarr
+    app.kubernetes.io/instance: recyclarr
+data:
+  recyclarr.yml: |
+    sonarr:
+      - base_url: http://sonarr.pirate-ship.svc:8989
+        api_key: 107c65b85b474e7c9be37e9837f9641b
+
+        # Quality Definition Settings
+        quality_definition: hybrid
+
+        # Release Profile Settings
+        release_profiles:
+          - trash_ids:
+              - d428eda85af1df8904b4bbe4fc2f537c # Anime - First release profile
+              - 6cd9e10bb5bb4c63d2d7cd3279924c7b # Anime - Second release profile
+            strict_negative_scores: true
+            tags: [anime]
+          - trash_ids:
+              - EBC725268D687D588A20CBC5F97E538B # Low Quality Groups
+              - 1B018E0C53EC825085DD911102E2CA36 # Release Sources (Streaming Service)
+              - 71899E6C303A07AF0E4746EFF9873532 # P2P Groups + Repack/Proper
+            strict_negative_scores: false
+            tags: [tv]
+          - trash_ids: [76e060895c5b8a765c310933da0a5357] # Optionals
+            filter:
+              include:
+                - 436f5a7d08fbf02ba25cb5e5dfe98e55 # Ignore Dolby Vision without HDR10 fallback
+                - f3f0f3691c6a1988d4a02963e69d11f2 # Ignore The Group -SCENE
+            tags: [tv]
+    radarr:
+      - base_url: http://radarr.pirate-ship.svc:7878
+        api_key: fee53cb4e5e544cca581bd3d28df205c
+
+        # Quality Definition Settings
+        quality_definition:
+          type: movie
+          preferred_ratio: 0.5
+
+        # Custom Format Settings
+        delete_old_custom_formats: false
+        custom_formats:
+          - names:
+              - BR-DISK
+              - EVO (no WEB-DL)
+              - LQ
+              - x265 (720/1080p)
+              - 3D
+            quality_profiles:
+              - name: HD-1080p
+              - name: HD-720p2
+                score: -1000
+          - names:
+              - TrueHD ATMOS
+              - DTS X
+            quality_profiles:
+              - name: SD
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: recyclarr-radarr
+  labels:
+    app.kubernetes.io/name: recyclarr
+    app.kubernetes.io/instance: recyclarr-radarr
+    app.kubernetes.io/version: "2.2"
+spec:
+  schedule: "0 */3 * * *" # every 8 hours
+  concurrencyPolicy: Replace
+  successfulJobsHistoryLimit: 21 # 1 week
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          volumes:
+            - name: recyclarr-config
+              configMap:
+                name: recyclarr-config
+          containers:
+            - name: recyclarr
+              image: ghcr.io/recyclarr/recyclarr:2.2
+              command: ["recyclarr"]
+              args: ["radarr", "-p"]
+              volumeMounts:
+                - mountPath: "/config/recyclarr.yml"
+                  name: recyclarr-config
+                  subPath: recyclarr.yml

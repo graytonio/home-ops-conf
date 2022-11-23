@@ -8,3 +8,4 @@ resources:
   - jackett.yaml
   - transmission.yaml
   - nzbget.yaml
+  - recyclarr.yaml
