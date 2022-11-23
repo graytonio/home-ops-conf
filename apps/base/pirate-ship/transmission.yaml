@@ -31,3 +31,6 @@ spec:
         type: pvc
         accessMode: ReadWriteMany
         size: 1Gi
+      downloads:
+        enabled: true
+        type: custom
