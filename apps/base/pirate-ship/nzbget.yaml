@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: transmission
+  name: nzbget
 spec:
-  releaseName: transmission
+  releaseName: nzbget
   chart:
     spec:
-      chart: transmission
+      chart: nzbget
       sourceRef:
         kind: HelmRepository
         name: k8s-at-home
@@ -17,9 +17,7 @@ spec:
       retries: 3
   values:
     image:
-      repository: ghcr.io/linuxserver/transmission
-    env:
-      TRANSMISSION_WEB_HOME: "/combustion-release/"
+      repository: ghcr.io/linuxserver/nzbget
     ingress:
       main:
         enabled: true

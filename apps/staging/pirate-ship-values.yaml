@@ -81,3 +81,24 @@ spec:
             paths:
               - path: /
                 pathType: ImplementationSpecific
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: nzbget
+  namespace: pirate-ship
+spec:
+  values:
+    image:
+      tag: 21.1.20221117
+    env:
+      TZ: America/New_York
+      PUID: "1003"
+      PGID: "1002"
+    ingress:
+      main:
+        hosts:
+          - host: nzbget.staging.graytonward.com
+            paths:
+              - path: /
+                pathType: ImplementationSpecific
