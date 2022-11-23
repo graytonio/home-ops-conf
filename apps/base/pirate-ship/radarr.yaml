@@ -32,3 +32,7 @@ spec:
       media:
         enabled: true
         type: custom
+      downloads:
+        enabled: true
+        mountPath: /downloads
+        type: custom

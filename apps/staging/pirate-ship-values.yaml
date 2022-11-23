@@ -17,6 +17,11 @@ spec:
           nfs:
             path: /mnt/Vault/kubernetes-staging/pirate-ship/Movies
             server: 10.0.0.50
+      downloads:
+        volumeSpec:
+          nfs:
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/downloads
+            server: 10.0.0.50
     ingress:
       main:
         hosts:
@@ -43,6 +48,11 @@ spec:
         volumeSpec:
           nfs:
             path: /mnt/Vault/kubernetes-staging/pirate-ship/TV
+            server: 10.0.0.50
+      downloads:
+        volumeSpec:
+          nfs:
+            path: /mnt/Vault/kubernetes-staging/pirate-ship/downloads
             server: 10.0.0.50
     ingress:
       main:
