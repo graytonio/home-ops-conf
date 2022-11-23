@@ -4,3 +4,4 @@ namespace: pirate-ship
 resources:
   - namespace.yaml
   - radarr.yaml
+  - sonarr.yaml
