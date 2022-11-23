@@ -16,6 +16,8 @@ spec:
     remediation:
       retries: 3
   values:
+    env:
+      NZBGET_PASS: ""
     image:
       repository: ghcr.io/linuxserver/nzbget
     ingress:
