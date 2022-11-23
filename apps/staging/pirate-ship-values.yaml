@@ -11,6 +11,12 @@ spec:
       TZ: America/New_York
       PUID: "1003"
       PGID: "1002"
+    persistence:
+      media:
+        volumeSpec:
+          nfs:
+            path: /mnt/Vault/Media/Movies
+            server: 10.0.0.50
     ingress:
       main:
         hosts:

@@ -29,3 +29,6 @@ spec:
         type: pvc
         accessMode: ReadWriteMany
         size: 1Gi
+      media:
+        enabled: true
+        type: custom
