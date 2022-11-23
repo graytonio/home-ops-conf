@@ -88,8 +88,8 @@ spec:
       PGID: "1002"
     persistence:
       downloads:
-        nfs:
-          volumeSpec:
+        volumeSpec:
+          nfs:
             path: /mnt/Vault/Media/downloads
             server: 10.0.0.50
     ingress:
@@ -115,8 +115,8 @@ spec:
       PGID: "1002"
     persistence:
       downloads:
-        nfs:
-          volumeSpec:
+        volumeSpec:
+          nfs:
             path: /mnt/Vault/Media/downloads
             server: 10.0.0.50
     ingress:
