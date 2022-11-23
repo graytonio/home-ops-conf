@@ -33,7 +33,7 @@ spec:
       version: "16.3.2"
   values:
     image:
-      tag: v4.1.0.6175
+      tag: 3.0.9
     env:
       TZ: America/New_York
       PUID: "1003"
