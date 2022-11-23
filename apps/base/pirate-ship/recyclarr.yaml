@@ -8,7 +8,7 @@ metadata:
 data:
   recyclarr.yml: |
     sonarr:
-      - base_url: http://sonarr.pirate-ship.svc:8989
+      - base_url: http://sonarr.pirate-ship.svc.cluster.local:8989
         api_key: 107c65b85b474e7c9be37e9837f9641b
 
         # Quality Definition Settings
@@ -34,7 +34,7 @@ data:
                 - f3f0f3691c6a1988d4a02963e69d11f2 # Ignore The Group -SCENE
             tags: [tv]
     radarr:
-      - base_url: http://radarr.pirate-ship.svc:7878
+      - base_url: http://radarr.pirate-ship.svc.cluster.local:7878
         api_key: fee53cb4e5e544cca581bd3d28df205c
 
         # Quality Definition Settings
