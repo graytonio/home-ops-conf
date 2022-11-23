@@ -18,6 +18,8 @@ spec:
   values:
     image:
       repository: ghcr.io/linuxserver/transmission
+    env:
+      TRANSMISSION_WEB_HOME: "/cumbustion-release/"
     ingress:
       main:
         enabled: true
