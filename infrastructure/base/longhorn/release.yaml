@@ -18,3 +18,5 @@ spec:
   values:
     ingress:
       enabled: true
+    persistence:
+      defaultClass: false
