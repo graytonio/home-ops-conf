@@ -9,3 +9,4 @@ resources:
   - traefik-config.yaml
 patchesStrategicMerge:
   - nfs-values.yaml
+  - longhorn-values.yaml
