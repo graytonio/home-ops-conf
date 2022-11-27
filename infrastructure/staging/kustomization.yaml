@@ -4,6 +4,7 @@ resources:
   - ../base/sources
   - ../base/metallb
   - ../base/nfs-subdir-provisioner
+  - ../base/longhorn
   - ../base/sealed-secrets
   - traefik-config.yaml
 patchesStrategicMerge:

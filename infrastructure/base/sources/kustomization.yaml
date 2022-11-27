@@ -8,3 +8,4 @@ resources:
   - metallb.yaml
   - nfs-subdir-provisioner.yaml
   - sealed-secrets.yaml
+  - longhorn.yaml
