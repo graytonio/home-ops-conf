@@ -46,6 +46,8 @@ spec:
       PUID: "1003"
       PGID: "1002"
     persistence:
+      config:
+        storageClass: longhorn
       media:
         volumeSpec:
           nfs:
