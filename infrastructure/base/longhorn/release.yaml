@@ -19,4 +19,4 @@ spec:
     ingress:
       enabled: true
     persistence:
-      defaultClass: false
+      defaultClass: true

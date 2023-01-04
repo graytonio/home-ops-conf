@@ -3,12 +3,12 @@ kind: Kustomization
 resources:
   - ../base/sources
   - ../base/metallb
-  - ../base/nfs-subdir-provisioner
+  # - ../base/nfs-subdir-provisioner
   - ../base/longhorn
   - ../base/sealed-secrets
   - traefik-config.yaml
 patchesStrategicMerge:
-  - nfs-values.yaml
+  # - nfs-values.yaml
   - longhorn-values.yaml
   - sealed-secrets-values.yaml
   - metallb-values.yaml
