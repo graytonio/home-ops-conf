@@ -13,7 +13,7 @@ spec:
           volumeMounts: 
             - name: certs 
               mountPath: /certs 
-    ingressRoutes:
+    ingressRoute:
       dashboard:
         enabled: false
     ports:
@@ -28,6 +28,7 @@ spec:
       - --entrypoints.websecure.http.tls.domains[0].main=staging.graytonward.com
       - --entrypoints.websecure.http.tls.domains[0].sans=*.staging.graytonward.com
     persistence:
+      name: certs
       enabled: true
       path: /certs
       size: 128Mi
