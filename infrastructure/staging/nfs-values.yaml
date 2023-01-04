@@ -4,6 +4,9 @@ metadata:
   name: nfs-subdir-provisioner
   namespace: nfs-subdir-provisioner
 spec:
+  chart:
+    spec:
+      version: 4.0.2
   values:
     nfs:
       server: 10.0.0.50

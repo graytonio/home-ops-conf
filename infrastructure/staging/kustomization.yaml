@@ -10,3 +10,5 @@ resources:
 patchesStrategicMerge:
   - nfs-values.yaml
   - longhorn-values.yaml
+  - sealed-secrets-values.yaml
+  - metallb-values.yaml
