@@ -5,13 +5,14 @@ metadata:
   namespace: kube-system
 spec:
   valuesContent: |-
-    initContainers:
-      - name: volume-permissions 
-        image: busybox:1.31.1 
-        command: ["sh", "-c", "chmod -Rv 600 /certs/*"] 
-        volumeMounts: 
-          - name: certs 
-            mountPath: /certs 
+    deployment:
+      initContainers:
+        - name: volume-permissions 
+          image: busybox:1.31.1 
+          command: ["sh", "-c", "chmod -Rv 600 /certs/*"] 
+          volumeMounts: 
+            - name: certs 
+              mountPath: /certs 
     ingressRoutes:
       dashboard:
         enabled: false
